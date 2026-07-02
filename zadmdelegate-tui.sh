@@ -26,11 +26,11 @@ command printf "Please wait...\n"
 # When querying data, we aim to minimize the use of any zimbra command
 # due to performance concerns. Instead, we will utilize the ldapsearch
 # command to retrieve the necessary data.
-_zldapprop=($(command zmlocalconfig -m nokey -s ldap_master_url zimbra_ldap_userdn zimbra_ldap_password))
+_zldapprop=($(command zmlocalconfig -m nokey -s zimbra_ldap_userdn zimbra_ldap_password ldap_master_url))
 
-_zldap_h="${_zldapprop[0]}"
-_zldap_u="${_zldapprop[1]}"
-_zldap_p="${_zldapprop[2]}"
+_zldap_u="${_zldapprop[0]}"
+_zldap_p="${_zldapprop[1]}"
+_zldap_h="${_zldapprop[2]}"
 
 unset _zldapprop
 
